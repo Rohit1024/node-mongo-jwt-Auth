@@ -1,7 +1,6 @@
 const { User } = require("../models/User");
 const express = require("express");
 const router = express.Router();
-// const authToken = require("../middleware/auth_token");
 
 router.put("/update", async (req, res) => {
   try {
@@ -9,7 +8,6 @@ router.put("/update", async (req, res) => {
       req.headers["authorization"],
       process.env.SECRET_KEY
     );
-    // const user = await User.findById(req.user._id);
     const user = await User.findById(decoded._id);
     if (!user)
       res.send({ message: "User with id " + req.params.id + "not found" });
