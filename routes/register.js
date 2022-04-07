@@ -70,19 +70,3 @@ router.post("/register", async (req, res) => {
 });
 
 module.exports = router;
-
-// const token = jwt.sign({ _id: user._id }, config.get("PrivateKey"));
-    // res
-    //   .header("Authorization", token)
-    //   .send(
-    //     _.pick(user, [
-    //       "_id",
-    //       "firstName",
-    //       "lastName",
-    //       "email",
-    //       "password",
-    //       "dateOfBirth",
-    //       "phoneNo",
-    //       "profilePhoto",
-    //     ])
-    //   );
