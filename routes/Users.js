@@ -83,29 +83,6 @@ users.post("/login", async (req, res) => {
   //Send the jwt with id as it can be used to get user details
   const body = { token: token };
   res.status(200).send(body);
-
-  // User.findOne({
-  //   email: req.body.email,
-  // })
-  //   .then((user) => {
-  //     if (user) {
-  //       const payload = {
-  //         _id: user._id,
-  //         first_name: user.first_name,
-  //         last_name: user.last_name,
-  //         email: user.email,
-  //       };
-  //       let token = jwt.sign(payload, process.env.SECRET_KEY, {
-  //         expiresIn: 1440,
-  //       });
-  //       res.json({ token: token });
-  //     } else {
-  //       res.json({ error: "User does not exist" });
-  //     }
-  //   })
-  //   .catch((err) => {
-  //     res.send("error: " + err);
-  //   });
 });
 
 users.get("/profile", (req, res) => {
